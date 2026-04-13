@@ -28,7 +28,7 @@ export default function Hero() {
           <img
             src="/assets/CXanLabs_For_Drk_Backgrounds.svg"
             alt="CXanLabs"
-            className="h-36 w-auto"
+            className="h-56 w-auto"
           />
         </div>
 
