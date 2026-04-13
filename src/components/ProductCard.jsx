@@ -19,7 +19,7 @@ const STATUS = {
   },
 }
 
-export default function ProductCard({ name, description, url, status = 'coming_soon', logo }) {
+export default function ProductCard({ name, description, url, status = 'coming_soon', logoUrl }) {
   const s = STATUS[status]
   const isLive = status === 'live'
 
@@ -45,36 +45,37 @@ export default function ProductCard({ name, description, url, status = 'coming_s
         e.currentTarget.style.boxShadow = 'none'
       }}
     >
-      {/* Header row */}
-      <div className="flex items-start justify-between mb-4">
-        <div className="flex items-center gap-3">
-          {logo ? (
-            <img src={logo} alt={`${name} logo`} className="h-8 w-8 rounded-lg object-contain" />
-          ) : (
-            <div
-              className="h-8 w-8 rounded-lg flex items-center justify-center text-xs font-bold"
-              style={{ background: 'rgba(0,194,255,0.12)', color: 'var(--color-brand)' }}
-            >
-              {name.charAt(0)}
-            </div>
-          )}
-          <span
-            className="font-semibold text-base"
-            style={{ color: 'var(--color-text)' }}
-          >
+      {/* Header */}
+      <div className="mb-4">
+        <div className="flex items-center gap-3 mb-2.5">
+          {logoUrl ? (
+            <img
+              src={logoUrl}
+              alt={`${name} logo`}
+              className="h-8 w-8 rounded-lg object-contain"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none'
+                e.currentTarget.nextElementSibling.style.display = 'block'
+              }}
+            />
+          ) : null}
+          <img
+            src="/assets/XCanLabs_Logo_X.svg"
+            alt="CXanLabs X"
+            className="h-8 w-8 rounded-lg object-contain"
+            style={{ display: logoUrl ? 'none' : 'block' }}
+          />
+          <span className="font-semibold text-base" style={{ color: 'var(--color-text)' }}>
             {name}
           </span>
         </div>
 
-        {/* Status badge */}
+        {/* Status badge on its own line */}
         <span
-          className="flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full shrink-0"
+          className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full"
           style={{ color: s.text, background: s.bg }}
         >
-          <span
-            className="h-1.5 w-1.5 rounded-full"
-            style={{ background: s.dot }}
-          />
+          <span className="h-1.5 w-1.5 rounded-full" style={{ background: s.dot }} />
           {s.label}
         </span>
       </div>

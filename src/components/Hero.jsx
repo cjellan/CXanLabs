@@ -24,31 +24,13 @@ export default function Hero() {
 
       <div className="relative z-10 flex flex-col items-center text-center max-w-3xl">
         {/* Logo */}
-        <div className="mb-8">
+        <div className="mb-10">
           <img
-            src="/assets/cxanlabs-logo.svg"
+            src="/assets/CXanLabs_For_Drk_Backgrounds.svg"
             alt="CXanLabs"
-            className="h-20 w-auto"
-            onError={(e) => {
-              // Fallback text mark if logo file isn't present yet
-              e.currentTarget.style.display = 'none'
-              e.currentTarget.nextElementSibling.style.display = 'block'
-            }}
+            className="h-36 w-auto"
           />
-          <span
-            className="hidden text-5xl font-extrabold tracking-tight"
-            style={{ color: 'var(--color-brand)' }}
-          >
-            CXan<span style={{ color: 'var(--color-text)' }}>Labs</span>
-          </span>
         </div>
-
-        <h1
-          className="text-6xl sm:text-7xl font-extrabold tracking-tight leading-none mb-6"
-          style={{ color: 'var(--color-text)' }}
-        >
-          CXan<span style={{ color: 'var(--color-brand)' }}>Labs</span>
-        </h1>
 
         <p
           className="text-xl sm:text-2xl font-light max-w-xl leading-relaxed"

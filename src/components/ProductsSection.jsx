@@ -1,19 +1,25 @@
 import ProductCard from './ProductCard'
 
+function faviconUrl(domain) {
+  return `https://www.google.com/s2/favicons?domain=${domain}&sz=64`
+}
+
 const LIVE_PRODUCTS = [
   {
     name: 'XanderFCR.io',
     description:
-      'A smarter way to manage facility condition reports — streamline inspections, track findings, and close the loop faster than ever.',
+      'Bringing a modern, user-friendly application to the world of Federal Court Reporting. XanderFCR handles your invoicing, AO compliance reports, time logs, expenses, and tax summaries — so you can focus on the courtroom.',
     url: 'https://xanderfcr.io',
     status: 'live',
+    logoUrl: '/assets/XanderFCR_LogoX.svg',
   },
   {
     name: 'XanWeek.io',
     description:
-      'Automated weekly planning and scheduling that cuts the time you spend organizing your workweek down to seconds.',
+      'The scheduling and tracking app that helps you manage your babysitting, nanny, or au pair schedules in a seamless, mobile-first platform.',
     url: 'https://xanweek.io',
     status: 'live',
+    logoUrl: faviconUrl('xanweek.io'),
   },
 ]
 
@@ -39,7 +45,7 @@ const IN_PROGRESS_PRODUCTS = [
   {
     name: 'StencilGC.io',
     description:
-      'Simplifying golf course management with digital stencil tracking, maintenance logs, and course operations tools.',
+      'Automating tattoo artists\' busy schedules, payment processing, and automated marketing from one simple application.',
     status: 'collaboration',
   },
 ]
